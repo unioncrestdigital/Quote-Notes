@@ -1,0 +1,6 @@
+{
+  "name": "Quote Notes",
+  "description": "Granola-style AI meeting notepad with verbatim quote attribution, intelligent note synthesis, and professional task syncing to Linear, Notion, and Slack.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

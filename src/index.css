@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-primary: #185848;
+    --theme-primary-hover: #114236;
+    --theme-primary-light: #E8F4F0;
+    --theme-primary-text: #0F3D32;
+    --theme-accent-quote: #1E6E5A;
+    --theme-accent-glow: rgba(24, 88, 72, 0.12);
+    --bg-main: #F6F9F8;
+    --bg-sidebar: #EEF4F1;
+    --bg-card: #FFFFFF;
+    --border-hairline: rgba(24, 88, 72, 0.08);
+    --ease-out-clean: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-main);
+  }
+}
+
+.font-serif-quote {
+  font-family: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  letter-spacing: -0.01em;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Theme color utilities */
+.bg-theme-main { background-color: var(--bg-main); }
+.bg-theme-sidebar { background-color: var(--bg-sidebar); }
+.bg-theme-card { background-color: var(--bg-card); }
+.bg-theme-primary { background-color: var(--theme-primary); }
+.text-theme-primary { color: var(--theme-primary); }
+.text-theme-quote { color: var(--theme-accent-quote); }
+.border-theme-hairline { border-color: var(--border-hairline); }
+.bg-theme-light { background-color: var(--theme-primary-light); }
+.text-theme-text { color: var(--theme-primary-text); }
+
+/* Emil Kowalski & Clean Pro Max tactile shadows */
+.shadow-clean-xs,
+.shadow-craft-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 1px rgba(0, 0, 0, 0.015);
+}
+
+.shadow-clean-sm,
+.shadow-craft {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-clean {
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-clean-modal,
+.shadow-craft-modal {
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.ease-emil {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tactile button micro-interaction */
+.btn-tactile {
+  transition: transform 100ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease, opacity 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+.btn-tactile:active {
+  transform: scale(0.98);
+}
+
+/* Clean smooth modal entry */
+@keyframes cleanModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes cleanFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-clean-modal,
+.animate-emil-modal {
+  animation: cleanModalIn 160ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-clean-fade,
+.animate-emil-fade {
+  animation: cleanFadeIn 120ms ease-out forwards;
+}
+
+/* Subtle, unobtrusive scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 160, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 160, 160, 0.4);
+}
