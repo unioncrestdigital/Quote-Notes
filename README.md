@@ -6,6 +6,20 @@ with a summary nobody can check.
 
 ![Quote Notes workspace](docs/screenshots/workspace.png)
 
+## What this repository is
+
+Baseline architecture. The capture pipeline, the enhance-and-fallback pattern,
+the three-pane layout and the type system here are the foundation that much
+larger client software gets built on top of. What is in this repository is the
+layer that does not change from one build to the next.
+
+A client build keeps this core and adds what that organisation needs:
+server-side transcription, real storage for audio and transcripts, accounts and
+permissions, live integrations in place of the simulated sync, and retention
+rules that enforce rather than display. The structure underneath stays as it is.
+
+Read it as a structural reference, not as a product.
+
 ## The idea
 
 Most AI notetakers hand you a paragraph of synthesis and throw the transcript
@@ -82,7 +96,8 @@ model. Without it the local synthesiser runs instead.
 
 ## Honest status
 
-This is a working build, not a shipped product.
+This is a working build, not a shipped product. The gaps below are the ones a
+client build closes.
 
 - **The sample meetings are fictional.** `src/data/sampleMeetings.ts` contains
   invented people and invented companies. No real meeting, client or recording is
